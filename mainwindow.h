@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QDebug>
+#include <QFileDialog>
+#include <QMediaPlayer>
+
+#include "theme.h";
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -15,7 +20,20 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void sendMusic();
+    void importImage();
+    void importMusic();
+
+    void playPause();
+
+    void audioAvailable(bool available);
+
 private:
     Ui::MainWindow *ui;
+
+    QMediaPlayer *mediaPlayer;
+    QVector <Theme> themes;
+
 };
 #endif // MAINWINDOW_H
