@@ -12,12 +12,20 @@ class Music
 {
 public:
     Music();
+    Music(Details det);
+
+    void setMusicName(QString musicName);
+    void setfileUrl(QString fileUrl);
+    void setDetail(Details details);
+
+    QString getMusicName();
+    QString getFileUrl();
+    Details &getDetails();
 
 private:
     QString musicName;
-    QUrl fileUrl;
+    QString fileUrl;
     Details details;
-    //Theme theme;
 };
 
 #endif // MUSIC_H

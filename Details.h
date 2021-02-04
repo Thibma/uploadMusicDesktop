@@ -10,9 +10,15 @@ class Details
 public:
     Details();
 
+    void setName(QString name);
+    void setUrl(QString url);
+
+    QString getName();
+    QString getUrl();
+
 private:
     QString name;
-    QUrl urlImage;
+    QString urlImage;
 };
 
 #endif // AUTHOR_H

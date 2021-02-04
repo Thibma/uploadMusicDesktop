@@ -7,6 +7,8 @@
 #include <QMediaPlayer>
 
 #include "theme.h";
+#include "music.h"
+#include "network.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,7 +23,14 @@ public:
     ~MainWindow();
 
 private slots:
+    void getThemesOk();
+    void sendMusicOk();
+
     void sendMusic();
+    void sendDetailOk();
+
+    void failed();
+
     void importImage();
     void importMusic();
 
@@ -33,7 +42,11 @@ private:
     Ui::MainWindow *ui;
 
     QMediaPlayer *mediaPlayer;
-    QVector <Theme> themes;
+    QVector <Theme *> themes;
+
+    Music *music;
+
+    Network *network;
 
 };
 #endif // MAINWINDOW_H

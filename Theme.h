@@ -7,11 +7,13 @@
 class Theme
 {
 public:
-    Theme(QString name);
+    Theme(QString id, QString name);
     QString getName();
+    QString getId();
 
 private:
     QString m_name;
+    QString m_id;
 };
 
 #endif // THEME_H
